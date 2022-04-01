@@ -22,7 +22,10 @@ jobs:
     strategy:
       matrix:
         dotnet-version: ['3.0', '3.1.x', '5.0.x' ]
-
+    
+    env:
+      EMAIL: ${{ secrets.email }}
+      NAME: ${{ secrets.name }}
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
