@@ -38,6 +38,7 @@ jobs:
           dotnet run -p generator/src/generator.csproj -- . "http://localhost:8000/" _site
           ./copy-assets.bash _site
       - name: commit
+        run:
           git remote update && git fetch
           git add _site && git commit origin gh-pages -m "gitAct_html_build"
         
