@@ -37,10 +37,6 @@ jobs:
         run: 
           dotnet run -p generator/src/generator.csproj -- . "https://rnjsrjs0417.github.io/DevOpsKoreaHOL/" _site
           ./copy-assets.bash _site
-      - name: config
-        run:
-          git config --global user.name "rnjsrjs0417"
-          git config --global user.email "rnjsrjs0417@naver.com"
       - name: commit
         run:
           rm .gitignore 
