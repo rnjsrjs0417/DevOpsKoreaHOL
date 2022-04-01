@@ -37,5 +37,5 @@ jobs:
         run: 
           dotnet run -p generator/src/generator.csproj -- . "http://localhost:8000/" _site
           ./copy-assets.bash _site
-        
+          git add _site && git commit origin gh-pages -m "gitAct_html_build"
         
