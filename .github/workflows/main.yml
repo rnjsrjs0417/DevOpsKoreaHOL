@@ -34,7 +34,7 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - name: build
-        run: 
+        run: |
           dotnet run -p generator/src/generator.csproj -- . "https://rnjsrjs0417.github.io/DevOpsKoreaHOL/" _site
           ./copy-assets.bash _site
           
