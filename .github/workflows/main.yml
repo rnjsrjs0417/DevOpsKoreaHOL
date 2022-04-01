@@ -42,8 +42,8 @@ jobs:
           ./copy-assets.bash _site
       - name: config
         run:          
-          git config --global user.email "rnjsrjs0417@naver.com" 
-          git config --global user.name "rnjsrjs0417"
+          git config --global user.email "$EMAIL" 
+          git config --global user.name "$NAME"
       - name: commit
         run:
           rm .gitignore 
