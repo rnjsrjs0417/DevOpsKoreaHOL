@@ -37,8 +37,13 @@ jobs:
         run: 
           dotnet run -p generator/src/generator.csproj -- . "http://localhost:8000/" _site
           ./copy-assets.bash _site
+      - name: config
+        run:          
+          git config --global user.email "rnjsrjs0417@naver.com" 
+          git config --global user.name "rnjsrjs0417"
       - name: commit
         run:
-          git remote update && git fetch
-          git add _site && git commit origin gh-pages -m "gitAct_html_build"
-        
+          rm .gitignore 
+          git add _site 
+          git commit -m "build"
+          git push origin `git subtree split --prefix _site main`:gh-pages --force
